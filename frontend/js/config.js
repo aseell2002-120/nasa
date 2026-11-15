@@ -1,4 +1,4 @@
-// Backend locations. Override with ?api=...&nav=... (saved to localStorage) when ports differ.
+﻿// Backend locations. Override with ?api=...&nav=... (saved to localStorage) when ports differ.
 const q = new URLSearchParams(location.search);
 function pick(key, fallback) {
   const fromQuery = q.get(key);
@@ -9,7 +9,8 @@ function pick(key, fallback) {
 }
 export const CONFIG = {
   // Person 4 Mission Optimizer (FastAPI). Default CORS allows http://localhost:5173.
-  apiBase: pick("api", "http://127.0.0.1:8000").replace(/\/$/, ""),
+  apiBase: pick("api", "https://nasa-8xj2.onrender.com").replace(/\/$/, ""),
   // Person 3 moon_navigation (Express, CORS open). Optional: terrain layer + rover routes.
   navBase: pick("nav", "http://localhost:3003/api/v1").replace(/\/$/, ""),
 };
+
